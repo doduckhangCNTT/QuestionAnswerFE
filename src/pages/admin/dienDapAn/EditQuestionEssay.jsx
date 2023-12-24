@@ -1,17 +1,15 @@
 import React, { useEffect } from "react";
 import { CloseOutlined } from "@ant-design/icons";
-import { Button, Card, Checkbox, Form, Input, Space, Typography } from "antd";
+import { Button, Card, Form, Input } from "antd";
 import { useAppStore } from "../../../store/appstate";
-import { useNavigate, useParams } from "react-router-dom";
-import { v4 as uuidv4 } from "uuid";
+import { useParams } from "react-router-dom";
 import Swal from "sweetalert2/dist/sweetalert2.js";
-import { patchApi, postApi } from "../../../services/fetchData";
-import { AnswerEnum, TopicQuestionEnum } from "../../../config/Enum/Question";
+import { patchApi } from "../../../services/fetchData";
 
 const EditQuestionEssay = () => {
-  const { quiz, createQuestionsTuLuanSet, getQuizTuLuanSet } = useAppStore();
+  const { quiz, getQuizTuLuanSet } = useAppStore();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
@@ -56,7 +54,7 @@ const EditQuestionEssay = () => {
     },
   };
 
-  const initValueQuestion = { content: "", answer: "" };
+  // const initValueQuestion = { content: "", answer: "" };
 
   return (
     <div className="w-full">

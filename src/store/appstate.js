@@ -3,12 +3,9 @@ import {
   createQuestionsTracNghiem,
   createQuestionsTuLuan,
   createQuizTracNghiem,
-  getListTracNghiem,
-  getListTuLuan,
-  getTracNghiem,
 } from "../services/tracNghiem.service";
 import { shuffleArray } from "../pages/quiz/helper";
-import { getApi, postApi } from "../services/fetchData";
+import { getApi } from "../services/fetchData";
 import { AnswerEnum } from "../config/Enum/Question";
 
 export const useAppStore = create((set, get) => ({
@@ -127,7 +124,7 @@ export const useAppStore = create((set, get) => ({
       const result = await getApi(`questions`);
       if (result && result.data) {
         const data = result.data.filter(
-          (item) => item.typeAnswer == AnswerEnum.EnterAnswer
+          (item) => item.typeAnswer === AnswerEnum.EnterAnswer
         );
         set({ listQuizTuLuan: data });
       }

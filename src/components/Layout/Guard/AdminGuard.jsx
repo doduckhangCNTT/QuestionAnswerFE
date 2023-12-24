@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import { Layout } from "antd";
 import HeaderAdmin from "../Admin/HeaderAdmin";
 import SiderAdmin from "../Admin/SiderAdmin";
@@ -7,7 +6,6 @@ import SiderAdmin from "../Admin/SiderAdmin";
 const AdminGuard = ({ children }) => {
   const authToken = sessionStorage.getItem("token");
   console.log(authToken);
-  const navigate = useNavigate();
 
   // useEffect(() => {
   //   //if no token, it will go to sign in

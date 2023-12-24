@@ -1,17 +1,13 @@
 import React from "react";
 import { CloseOutlined } from "@ant-design/icons";
-import { Button, Card, Checkbox, Form, Input, Space, Typography } from "antd";
-import { useAppStore } from "../../../store/appstate";
-import { useNavigate } from "react-router-dom";
+import { Button, Card, Form, Input } from "antd";
+
 import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 import { postApi } from "../../../services/fetchData";
 import { AnswerEnum, TopicQuestionEnum } from "../../../config/Enum/Question";
 
 const QuestionTuLuan = () => {
-  const { quiz, createQuestionsTuLuanSet } = useAppStore();
-  const navigate = useNavigate();
-
   const handleSubmitQuestion = async (values) => {
     console.log(values);
     if (values && values.questions && values.questions.length > 0) {

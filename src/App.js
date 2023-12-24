@@ -12,7 +12,6 @@ import TreasureRule from "./pages/treasure/TreasureRule";
 import Treasure from "./pages/treasure";
 import Summary from "./pages/quiz/summary";
 import Login from "./pages/auth/Login";
-import { useAppStore } from "./store/appstate.ts";
 import { useCallback, useEffect } from "react";
 import Obstacle from "./pages/obstacle/index.jsx";
 import SummaryTuLuan from "./pages/treasure/SummaryTuLuan.jsx";
@@ -32,7 +31,7 @@ import EditQuestionEssay from "./pages/admin/dienDapAn/EditQuestionEssay.jsx";
 
 function App() {
   // TODO: get init state
-  const { quizQuestions, updateQuizQuestions } = useAppStore();
+  // const { quizQuestions, updateQuizQuestions } = useAppStore();
   // const { auth, authActionSet } = useAppStore();
   const authAction = useAuthStore((store) => store.authAction);
 

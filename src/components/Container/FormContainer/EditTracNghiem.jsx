@@ -2,18 +2,16 @@ import React, { useEffect } from "react";
 import { CloseOutlined } from "@ant-design/icons";
 import { Button, Card, Checkbox, Form, Input, Space, Typography } from "antd";
 import { useAppStore } from "../../../store/appstate";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import { AnswerEnum, TopicQuestionEnum } from "../../../config/Enum/Question";
 import { patchApi } from "../../../services/fetchData";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 
 const EditTracNghiem = () => {
-  const { quiz, createQuestionsTracNghiemSet, questions } = useAppStore();
+  const { quiz } = useAppStore();
   console.log("Quiz: ", quiz);
   const { id } = useParams();
-
-  const navigate = useNavigate();
 
   const handleSubmitQuestion = async (values) => {
     // const data = {
@@ -104,7 +102,7 @@ const EditTracNghiem = () => {
     },
   };
   const initValueAnswer = { content: "", isCorrect: false };
-  const initValueQuestion = { content: "" };
+  // const initValueQuestion = { content: "" };
   return (
     <Form
       {...formLayout}

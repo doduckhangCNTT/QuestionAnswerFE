@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
 
 import { Content } from "antd/es/layout/layout";
-import { Button, Form, Input, Layout } from "antd";
+import { Form, Layout } from "antd";
 import EditTracNghiem from "../../../components/Container/FormContainer/EditTracNghiem";
 import { useParams } from "react-router-dom";
 import { useAppStore } from "../../../store/appstate";
-import { editBoDeTracNghiem } from "../../../services/tracNghiem.service";
 
 const EditQuestion = () => {
   const [form] = Form.useForm();
@@ -13,13 +12,13 @@ const EditQuestion = () => {
   const { quiz, getQuizTracNghiemSet } = useAppStore();
   const { id } = useParams();
 
-  const handleEditQuiz = (values) => {
-    const body = {
-      ...values,
-      quizId: id,
-    };
-    editBoDeTracNghiem(body);
-  };
+  // const handleEditQuiz = (values) => {
+  //   const body = {
+  //     ...values,
+  //     quizId: id,
+  //   };
+  //   editBoDeTracNghiem(body);
+  // };
 
   useEffect(() => {
     getQuizTracNghiemSet(id);
@@ -27,16 +26,16 @@ const EditQuestion = () => {
 
   useEffect(() => {
     form.setFieldsValue(quiz);
-  }, []);
+  });
 
-  const formLayout = {
-    labelCol: {
-      span: 4,
-    },
-    wrapperCol: {
-      span: 20,
-    },
-  };
+  // const formLayout = {
+  //   labelCol: {
+  //     span: 4,
+  //   },
+  //   wrapperCol: {
+  //     span: 20,
+  //   },
+  // };
   return (
     <Layout style={{ padding: "0 24px 24px" }}>
       <Content>

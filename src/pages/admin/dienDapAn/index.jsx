@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import { Layout, Popconfirm, Space, Table, Tag } from "antd";
+import { Layout, Popconfirm, Space, Table } from "antd";
 import { Content } from "antd/es/layout/layout";
 import { EyeOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { useAppStore } from "../../../store/appstate";
-import { xoaBoDeTracNghiem } from "../../../services/tracNghiem.service";
 import { deleteApi } from "../../../services/fetchData";
 
 const QuanLiTuLuan = () => {
@@ -14,7 +13,7 @@ const QuanLiTuLuan = () => {
 
   useEffect(() => {
     getListTuLuanSet();
-  }, []);
+  });
 
   /**
    * Thực hiện xóa câu hỏi dạng tự luân

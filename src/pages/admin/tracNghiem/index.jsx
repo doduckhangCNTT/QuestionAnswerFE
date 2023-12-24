@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Button, Layout, Modal, Popconfirm, Space, Table, Tag } from "antd";
+import React, { useEffect } from "react";
+import { Layout, Popconfirm, Space, Table } from "antd";
 import { Content } from "antd/es/layout/layout";
 import { EyeOutlined, EditOutlined, DeleteOutlined } from "@ant-design/icons";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAppStore } from "../../../store/appstate";
-import { xoaBoDeTracNghiem } from "../../../services/tracNghiem.service";
 import { deleteApi } from "../../../services/fetchData";
 
 const QuanLiBoDe = () => {
@@ -13,7 +12,7 @@ const QuanLiBoDe = () => {
   // Lấy dữ liệu câu hỏi trong lần đâu truy cập trang Admin danh sách Questions
   useEffect(() => {
     getListTracNghiemSet();
-  }, []);
+  });
 
   /**
    * Thực hiện xóa câu hỏi

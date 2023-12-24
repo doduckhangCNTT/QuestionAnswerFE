@@ -1,17 +1,12 @@
 import React from "react";
 import { CloseOutlined } from "@ant-design/icons";
-import { Button, Card, Checkbox, Form, Input, Space, Typography } from "antd";
-import { useAppStore } from "../../../store/appstate";
-import { useNavigate } from "react-router-dom";
+import { Button, Card, Checkbox, Form, Input, Space } from "antd";
 import { v4 as uuidv4 } from "uuid";
 import { AnswerEnum, TopicQuestionEnum } from "../../../config/Enum/Question";
 import { postApi } from "../../../services/fetchData";
 import Swal from "sweetalert2/dist/sweetalert2.js";
 
 const CreateQuestionInsideForm = () => {
-  const { quiz, createQuestionsTracNghiemSet, questions } = useAppStore();
-  const navigate = useNavigate();
-
   /**
    * Thực hiện thêm mới các câu hỏi
    * @param {*} values

@@ -1,23 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import CreateQuestionInsideForm from "./CreateQuestionInsideForm";
-import { useAppStore } from "../../../store/appstate";
+// import { useAppStore } from "../../../store/appstate";
 
 const CreateQuestionForm = () => {
-  const [isCreatedQuizSuccess, setIsCreatedQuizSuccess] = useState(false);
-  const { quiz, createQuizTracNghiemSet } = useAppStore();
+  // const [setIsCreatedQuizSuccess] = useState(false);
+  // const { createQuizTracNghiemSet } = useAppStore();
 
-  const handleSubmitQuiz = (values) => {
-    createQuizTracNghiemSet({
-      quizType: "Multiple-choice questions",
-      ...values,
-    });
-    setIsCreatedQuizSuccess(true);
-  };
+  // const handleSubmitQuiz = (values) => {
+  //   createQuizTracNghiemSet({
+  //     quizType: "Multiple-choice questions",
+  //     ...values,
+  //   });
+  //   setIsCreatedQuizSuccess(true);
+  // };
 
-  const formLayout = {
-    labelCol: { span: 4 },
-    wrapperCol: { span: 20 },
-  };
+  // const formLayout = {
+  //   labelCol: { span: 4 },
+  //   wrapperCol: { span: 20 },
+  // };
   return (
     <>
       {/* <Form

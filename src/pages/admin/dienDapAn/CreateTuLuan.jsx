@@ -1,29 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Content } from "antd/es/layout/layout";
 
-import { Button, Form, Input, Layout } from "antd";
+import { Layout } from "antd";
 import { useAppStore } from "../../../store/appstate";
 import QuestionTuLuan from "../../../components/Container/FormContainer/QuestionTuLuan";
 
 const CreateTuLuan = () => {
-  const [isCreatedQuizSuccess, setIsCreatedQuizSuccess] = useState(false);
+  // const [isCreatedQuizSuccess, setIsCreatedQuizSuccess] = useState(false);
 
-  const { quiz, createQuizTracNghiemSet } = useAppStore();
+  const { quiz } = useAppStore();
   console.log(quiz);
-  const handleSubmitQuiz = (values) => {
-    console.log(values);
-    createQuizTracNghiemSet({
-      quizType: "Constructed response",
-      ...values,
-    });
-    setIsCreatedQuizSuccess(true);
-  };
+  // const handleSubmitQuiz = (values) => {
+  //   console.log(values);
+  //   createQuizTracNghiemSet({
+  //     quizType: "Constructed response",
+  //     ...values,
+  //   });
+  //   setIsCreatedQuizSuccess(true);
+  // };
 
-  const formLayout = {
-    labelCol: { span: 4 },
-    wrapperCol: { span: 20 },
-  };
+  // const formLayout = {
+  //   labelCol: { span: 4 },
+  //   wrapperCol: { span: 20 },
+  // };
   return (
     <Layout style={{ padding: "0 24px 24px" }}>
       <Content>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Empty } from "antd";
 import { Link } from "react-router-dom";
 
@@ -22,7 +22,7 @@ export class ErrorBoundary extends React.Component {
         <div className="flex flex-col items-center justify-center w-full h-screen">
           <Empty
             image="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
-            imageStyle={{ height: 60, marginLeft: 'auto', marginRight: 'auto' }}
+            imageStyle={{ height: 60, marginLeft: "auto", marginRight: "auto" }}
             description={
               <h3 className="font-dancing text-4xl">
                 Có gì đó sai sai
@@ -32,7 +32,14 @@ export class ErrorBoundary extends React.Component {
             }
           >
             <Link to={"/"}>
-              <Button type="primary" size="large" danger onClick={()=>window.location.reload()}>Tải lại trang</Button>
+              <Button
+                type="primary"
+                size="large"
+                danger
+                onClick={() => window.location.reload()}
+              >
+                Tải lại trang
+              </Button>
             </Link>
           </Empty>
         </div>

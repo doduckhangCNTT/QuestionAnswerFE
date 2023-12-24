@@ -1,6 +1,5 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import "./puzzle.css";
-import { useLocation } from "react-router-dom";
 import { imgList } from "./constants";
 import { useNavigate } from "react-router-dom";
 import { Spin } from "antd";
@@ -157,7 +156,7 @@ let uploadFile;
   elFile.addEventListener("change", getFile);
 
   function getFile() {
-    if (this.files.length == 0) {
+    if (this.files.length === 0) {
       returnLoadFile({ fail: "no file" });
       return;
     }
@@ -175,7 +174,7 @@ let uploadFile;
       returnLoadFile({ fail: "error" });
     });
 
-    if (options.image || options.readMethod == "readAsDataURL")
+    if (options.image || options.readMethod === "readAsDataURL")
       reader.readAsDataURL(this.files[0]);
     else reader.readAsText(this.files[0]);
   } // getFile
@@ -310,7 +309,7 @@ Side.prototype.drawPath = function (
   backwards,
   withoutMoveTo
 ) {
-  let k, mix, miy;
+  let k;
 
   if (backwards) {
     if (!withoutMoveTo) {
@@ -319,7 +318,7 @@ Side.prototype.drawPath = function (
         this.points[this.points.length - 1].y - shifty
       );
     }
-    if (this.type == "d") {
+    if (this.type === "d") {
       ctx.lineTo(this.points[0].x - shiftx, this.points[0].y - shifty);
     } else {
       // jigsaw side
@@ -338,7 +337,7 @@ Side.prototype.drawPath = function (
     if (!withoutMoveTo) {
       ctx.moveTo(this.points[0].x - shiftx, this.points[0].y - shifty);
     }
-    if (this.type == "d") {
+    if (this.type === "d") {
       ctx.lineTo(this.points[1].x - shiftx, this.points[1].y - shifty);
     } else {
       // edge zigzag
@@ -413,7 +412,7 @@ Piece.prototype.createDivPiece = function (puzzle, scale, offsx, offsy) {
   ctx.clip();
 
   let sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight;
-  if (this.kx == 0) {
+  if (this.kx === 0) {
     sx = (0 * puzzle.dx) / scale + offsx; // won't work on safari if offsx < 0
     dWidth = 2 * puzzle.dx;
     dx = puzzle.dx;
@@ -423,7 +422,7 @@ Piece.prototype.createDivPiece = function (puzzle, scale, offsx, offsy) {
     dx = 0;
   }
   sWidth = dWidth / scale;
-  if (this.ky == 0) {
+  if (this.ky === 0) {
     sy = (0 * puzzle.dy) / scale + offsy; // won't work on safari if offsy < 0
     dHeight = 2 * puzzle.dy;
     dy = puzzle.dy;
@@ -580,29 +579,29 @@ PolyPiece.prototype.ifNear = function (otherPoly) {
       p2 = otherPoly.pieces[kn];
       // p2 above p1 ?
       if (
-        p1.kx == p2.kx &&
-        p1.ky == p2.ky + 1 &&
+        p1.kx === p2.kx &&
+        p1.ky === p2.ky + 1 &&
         this.puzzle.near(p1, p2, 0, -1)
       )
         return true;
       // p2 below p1 ?
       if (
-        p1.kx == p2.kx &&
-        p1.ky == p2.ky - 1 &&
+        p1.kx === p2.kx &&
+        p1.ky === p2.ky - 1 &&
         this.puzzle.near(p1, p2, 0, 1)
       )
         return true;
       // p2 left of p1 ?
       if (
-        p1.kx - 1 == p2.kx &&
-        p1.ky == p2.ky &&
+        p1.kx - 1 === p2.kx &&
+        p1.ky === p2.ky &&
         this.puzzle.near(p1, p2, -1, 0)
       )
         return true;
       // p2 right of p1 ?
       if (
-        p1.kx + 1 == p2.kx &&
-        p1.ky == p2.ky &&
+        p1.kx + 1 === p2.kx &&
+        p1.ky === p2.ky &&
         this.puzzle.near(p1, p2, +1, 0)
       )
         return true;
@@ -804,29 +803,7 @@ Puzzle.prototype.loadImage = function () {
 // -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -   -
 
 Puzzle.prototype.next = function () {
-  let nx,
-    ny,
-    np,
-    dx,
-    dy,
-    kx,
-    ky,
-    x,
-    y,
-    p1,
-    p2,
-    p3,
-    brd,
-    s1,
-    s2,
-    s3,
-    s4,
-    s5,
-    s6,
-    s7,
-    s8,
-    s9,
-    concav;
+  let nx, ny, np, dx, dy, kx, ky;
   /* parameters for the shape of pieces edges
    */
 

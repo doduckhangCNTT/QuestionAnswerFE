@@ -47,8 +47,7 @@ const Obstacle = () => {
         });
       }
       if (currentAnswer === crosswordData[index].answer) {
-        document
-          .getElementById(`cross-row${index}`).className = "";
+        document.getElementById(`cross-row${index}`).className = "";
         document
           .getElementById(`cross-row${index}`)
           .classList.add("cross-correct");
@@ -61,8 +60,7 @@ const Obstacle = () => {
           setIsCompleted(true);
         }
       } else {
-        document
-          .getElementById(`cross-row${index}`).className = "";
+        document.getElementById(`cross-row${index}`).className = "";
         document
           .getElementById(`cross-row${index}`)
           .classList.add("cross-wrong");
@@ -78,9 +76,9 @@ const Obstacle = () => {
     const handleOnKeyUp = (event) => {
       if (
         event.keyCode === 8 ||
-        event.keyCode == 32 ||
-        event.keyCode == 191 ||
-        event.keyCode == 190
+        event.keyCode === 32 ||
+        event.keyCode === 191 ||
+        event.keyCode === 190
       ) {
         return;
       }

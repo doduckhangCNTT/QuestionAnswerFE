@@ -1,6 +1,6 @@
 import React from "react";
 import { CloseOutlined } from "@ant-design/icons";
-import { Button, Card, Checkbox, Form, Input, Space } from "antd";
+import { Button, Card, Form, Input, Space } from "antd";
 
 const CrossWordForm = () => {
   /**
